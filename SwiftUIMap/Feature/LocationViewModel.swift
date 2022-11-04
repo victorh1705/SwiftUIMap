@@ -24,6 +24,7 @@ class LocationViewModel: ObservableObject {
     }
     
     @Published var showLocationList: Bool = false
+    @Published var sheetLocation: Location? = nil
     
     init(locationService: LocationServiceProtocol) {
         self.locationService = locationService
