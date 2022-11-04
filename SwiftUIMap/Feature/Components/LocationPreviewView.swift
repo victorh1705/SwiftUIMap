@@ -26,7 +26,7 @@ struct LocationPreviewView: View {
         }
         .padding(20)
         .background(
-            Color.white
+            Color.primary.colorInvert()
                 .opacity(0.7)
                 .offset(y: 65)
         )
@@ -95,7 +95,7 @@ extension LocationPreviewView {
                 .font(.headline)
                 .frame(width: 125, height: 35)
         }
-        .background(Color.black.opacity(0.1))
+        .background(Color.primary.opacity(0.5).colorInvert())
         .cornerRadius(10)
     }
 }

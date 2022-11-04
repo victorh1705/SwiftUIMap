@@ -11,6 +11,8 @@ import SwiftUI
 struct LocationView: View {
     @EnvironmentObject private var viewmodel: LocationViewModel
     
+    private let maxWidthForIpad: CGFloat = 700
+    
     var body: some View {
         ZStack {
             mapLayer
@@ -62,7 +64,7 @@ extension LocationView {
                         )
                 }
                 .frame(height: 55)
-                .background(Color.white)
+                .background(Color.primary.colorInvert())
                 .cornerRadius(10)
                 .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
                 .padding()
@@ -72,6 +74,7 @@ extension LocationView {
                 LocationsListView()
             }
         }
+        .frame(maxWidth: maxWidthForIpad)
     }
     
     private var mapLayer: some View {
@@ -98,6 +101,8 @@ extension LocationView {
                     LocationPreviewView(location: location)
                         .shadow(color: Color.black.opacity(0.3), radius: 20)
                         .padding()
+                        .frame(maxWidth: maxWidthForIpad)
+                        .frame(maxWidth: .infinity)
                         .transition(
                             .asymmetric(
                                 insertion: .move(edge: .trailing),

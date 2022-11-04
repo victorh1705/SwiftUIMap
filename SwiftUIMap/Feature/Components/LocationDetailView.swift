@@ -30,7 +30,7 @@ struct LocationDetailView: View {
             }
         }
         .ignoresSafeArea()
-        .background(Color.black.opacity(0.1))
+        .background(Color.black .opacity(0.1))
         .overlay(backButton, alignment: .topLeading)
     }
 }
@@ -51,7 +51,7 @@ extension LocationDetailView {
                 Image($0)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: UIScreen.main.bounds.width)
+                    .frame(width: UIDevice.current.userInterfaceIdiom == .pad ? nil : UIScreen.main.bounds.width)
                     .clipped()
             }
         }
@@ -112,7 +112,7 @@ extension LocationDetailView {
                 .font(.headline)
                 .padding(16)
                 .foregroundColor(.primary)
-                .background(Color.white.opacity(0.8))
+                .background(Color.primary.colorInvert().opacity(0.8))
                 .cornerRadius(10)
                 .shadow(radius: 4)
                 .padding()
