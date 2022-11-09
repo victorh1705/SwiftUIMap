@@ -1,6 +1,6 @@
 # SwiftUIMap
 
-Uma breve deA study case made from the youtube channel Swiftful Thinking
+A study case made from the youtube channel Swiftful Thinking
 
 ## Reference
 
